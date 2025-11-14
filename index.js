@@ -11,7 +11,8 @@ app.use(cors());
 
 app.use(express.json());
 // Load credentials
-const credentials = JSON.parse(fs.readFileSync("credentials.json"));
+// const credentials = JSON.parse(fs.readFileSync("credentials.json"));
+
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 // const auth = new google.auth.JWT(
 //   credentials.client_email,
@@ -21,7 +22,7 @@ const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 // );
 
 const auth = new google.auth.GoogleAuth({
-  keyFile: "./credentials.json",
+  keyFile: "credentials.json",
   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
 //comment test
@@ -54,5 +55,6 @@ app.post("/add-entry", async (req, res) => {
 });
 // app.listen(3000, () => console.log("Server running on port 3000"));
 module.exports = app;
+
 
 
