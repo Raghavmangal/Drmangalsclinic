@@ -67,8 +67,9 @@ const sheets = google.sheets({ version: "v4", auth });
     res.status(500).json({ error: "Failed to add entry" });
   }
 });
-// app.listen(3000, () => console.log("Server running on port 3000"));
+app.listen(3000, () => console.log("Server running on port 3000"));
 module.exports = app;
+
 
 
 
