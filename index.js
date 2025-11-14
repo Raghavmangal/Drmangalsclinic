@@ -1,8 +1,7 @@
-import express from "express";
-import { google } from "googleapis";
-import fs from "fs";
-import cors from 'cors';
-
+const express = require("express");
+const { google } = require("googleapis");
+const fs = require("fs");
+const cors = require("cors");
 const app = express();
 
 // Option 1: Allow all origins (development only)
@@ -54,5 +53,6 @@ app.post("/add-entry", async (req, res) => {
   }
 });
 // app.listen(3000, () => console.log("Server running on port 3000"));
-// module.exports = app;
-export default app
+module.exports = app;
+
+
